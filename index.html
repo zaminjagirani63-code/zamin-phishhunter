@@ -3,59 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#080d12">
-  <meta name="description" content="ZAMIN PhishHunter helps check suspicious URLs using threat intelligence.">
-  <title>ZAMIN PhishHunter | Link Safety</title>
+  <meta name="theme-color" content="#080b16">
+  <meta name="description" content="ZAMIN PhishHunter checks suspicious URLs with VirusTotal threat intelligence.">
+  <title>ZAMIN PhishHunter — Advanced Link Security</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="bg-grid"></div><div class="glow glow-a"></div><div class="glow glow-b"></div>
   <header class="topbar">
-    <a class="wordmark" href="#" aria-label="ZAMIN PhishHunter home">ZAMIN <span>PhishHunter</span></a>
-    <nav><a href="#scanner">URL Scanner</a><a href="#tools">Features</a><a href="#community">Community</a></nav>
-    <a class="nav-cta" href="#scanner">Scan a link <span>↗</span></a>
+    <a class="brand" href="#"><span class="brand-mark"><i data-lucide="shield-check"></i></span><span>ZAMIN <b>PhishHunter</b><small>LINK INTELLIGENCE</small></span></a>
+    <nav><a href="#scanner">Scanner</a><a href="#features">Features</a><a href="#community">Community</a></nav>
+    <a class="top-cta" href="#scanner">Start scanning <i data-lucide="arrow-up-right"></i></a>
   </header>
 
   <main>
     <section class="hero">
-      <div class="eyebrow"><span class="pulse"></span> LINK SECURITY • THREAT INTELLIGENCE</div>
-      <h1>Don't trust the link.<br><span>Check it first.</span></h1>
-      <p class="hero-copy">Check suspicious URLs with threat intelligence before you open them. Get a clear report about detected risks.</p>
-      <div class="trust-line"><span>✓ No account required</span><span>✓ API key stays server-side</span><span>✓ Clear scan limitations</span></div>
+      <div class="hero-badge"><span class="pulse"></span> ADVANCED LINK PROTECTION <span class="badge-divider"></span> V1.0</div>
+      <h1>One click can be risky.<br><span>Check before you trust.</span></h1>
+      <p class="hero-copy">Inspect suspicious links with global threat intelligence. Get clear detection signals before you decide to open an unfamiliar URL.</p>
+      <div class="hero-points"><span><i data-lucide="check-circle-2"></i> No account required</span><span><i data-lucide="lock-keyhole"></i> API key stays private</span><span><i data-lucide="zap"></i> Simple, fast checks</span></div>
     </section>
 
-    <section class="scanner-card" id="scanner">
-      <div class="scanner-heading"><div><div class="section-kicker">PHISHING CHECK</div><h2>Analyze a suspicious URL</h2></div><div class="live-pill"><i></i> Threat check</div></div>
-      <form id="scanForm">
-        <label class="sr-only" for="urlInput">Website URL</label>
-        <div class="input-row"><span class="link-icon">↗</span><input id="urlInput" type="url" placeholder="https://example.com" autocomplete="url" required><button id="scanButton" type="submit">Analyze URL <span>→</span></button></div>
-      </form>
-      <p class="input-hint">Enter a full URL including https://. Do not enter passwords or private information.</p>
-      <div id="result" class="result hidden" aria-live="polite"></div>
-      <div class="scanner-foot"><span>Powered by VirusTotal threat intelligence</span><span>Results can be incomplete or delayed</span></div>
+    <section class="scanner-wrap" id="scanner">
+      <div class="scanner-card">
+        <div class="scanner-top">
+          <div><div class="eyebrow"><span class="eyebrow-dot"></span> SECURITY SCANNER</div><h2>Analyze a suspicious URL</h2><p>Paste a link below to check its available threat report.</p></div>
+          <div class="scan-icon"><i data-lucide="scan-search"></i></div>
+        </div>
+        <form id="scanForm">
+          <label class="sr-only" for="urlInput">Website URL</label>
+          <div class="input-shell"><i data-lucide="link-2"></i><input id="urlInput" type="url" placeholder="https://example.com" autocomplete="url" required><button id="scanButton" type="submit">Analyze URL <i data-lucide="arrow-right"></i></button></div>
+        </form>
+        <div class="input-meta"><span><i data-lucide="info"></i> Include https:// or http://</span><span>Never enter passwords or private data</span></div>
+        <div id="result" class="result hidden" aria-live="polite"></div>
+        <div class="scanner-bottom"><span><i data-lucide="shield-check"></i> Powered by VirusTotal threat intelligence</span><span>Reports may be incomplete or delayed</span></div>
+      </div>
+      <div class="scanner-caption"><i data-lucide="shield-alert"></i> A clean report is not a guarantee that a website is safe.</div>
     </section>
 
-    <section class="feature-section" id="tools">
-      <div class="section-top"><div><div class="section-kicker">WHAT YOU GET</div><h2>Know what you're clicking.</h2></div><p>Simple security checks with transparent results. No made-up scan scores.</p></div>
+    <section class="features" id="features">
+      <div class="section-heading"><div><div class="eyebrow">BUILT FOR SAFER CLICKS</div><h2>Clarity over guesswork.</h2></div><p>Understand the signals. Make a more informed decision before visiting unfamiliar links.</p></div>
       <div class="feature-grid">
-        <article class="feature feature-green"><div class="feature-icon">⌕</div><div class="feature-tag">01 / URL</div><h3>Phishing signals</h3><p>Check whether security vendors have flagged a URL as malicious or suspicious.</p></article>
-        <article class="feature feature-blue"><div class="feature-icon">◎</div><div class="feature-tag">02 / INTELLIGENCE</div><h3>Threat report</h3><p>See available malicious, suspicious, harmless and undetected engine counts.</p></article>
-        <article class="feature feature-purple"><div class="feature-icon">↗</div><div class="feature-tag">03 / GUIDANCE</div><h3>Safer decisions</h3><p>Understand the result and what to do next before visiting an unfamiliar link.</p></article>
+        <article class="feature-card"><div class="feature-icon cyan"><i data-lucide="scan-line"></i></div><div class="feature-number">01 / URL ANALYSIS</div><h3>Phishing signals</h3><p>Check whether security engines have flagged a URL as malicious or suspicious.</p><span class="feature-arrow"><i data-lucide="arrow-up-right"></i></span></article>
+        <article class="feature-card"><div class="feature-icon violet"><i data-lucide="chart-no-axes-combined"></i></div><div class="feature-number">02 / THREAT REPORT</div><h3>Detection overview</h3><p>Review available malicious, suspicious, harmless and undetected engine counts.</p><span class="feature-arrow"><i data-lucide="arrow-up-right"></i></span></article>
+        <article class="feature-card"><div class="feature-icon green"><i data-lucide="shield-check"></i></div><div class="feature-number">03 / SMART GUIDANCE</div><h3>Safer decisions</h3><p>Get clear result wording and practical caution before opening an unfamiliar link.</p><span class="feature-arrow"><i data-lucide="arrow-up-right"></i></span></article>
       </div>
     </section>
 
     <section class="community" id="community">
-      <div class="community-copy"><div class="section-kicker">STAY CONNECTED</div><h2>Security updates.<br><span>One community.</span></h2><p>Join the official channel for project updates, tools and cybersecurity learning resources.</p>
-        <div class="community-actions"><a class="telegram-btn" href="https://t.me/KINGPROFESSORBACK" target="_blank" rel="noopener noreferrer">➤ Join Telegram channel <span>↗</span></a><a class="youtube-btn" href="https://www.youtube.com/@PROXZAMIN-z9l" target="_blank" rel="noopener noreferrer">▶ YouTube channel</a></div>
+      <div class="community-main"><div class="eyebrow">JOIN THE COMMUNITY</div><h2>Stay alert.<br><span>Stay connected.</span></h2><p>Follow the official channels for project updates, tools and cybersecurity learning resources.</p>
+        <div class="community-actions"><a class="telegram-btn" href="https://t.me/KINGPROFESSORBACK" target="_blank" rel="noopener noreferrer"><i data-lucide="send"></i> Join Telegram <i data-lucide="arrow-up-right"></i></a><a class="youtube-btn" href="https://www.youtube.com/@PROXZAMIN-z9l" target="_blank" rel="noopener noreferrer"><i data-lucide="youtube"></i> YouTube channel</a></div>
       </div>
-      <div class="community-side"><div class="channel-label">OFFICIAL TELEGRAM</div><div class="channel-name">KING PROFESSOR<br>BACK</div><div class="channel-url">t.me/KINGPROFESSORBACK</div><div class="channel-decoration">➤</div></div>
+      <div class="community-panel"><div class="panel-orbit orbit-one"></div><div class="panel-orbit orbit-two"></div><div class="panel-icon"><i data-lucide="radio-tower"></i></div><div class="panel-label">OFFICIAL TELEGRAM CHANNEL</div><strong>KING PROFESSOR<br>BACK</strong><span>t.me/KINGPROFESSORBACK</span><i class="panel-watermark" data-lucide="send"></i></div>
     </section>
   </main>
 
-  <footer><a class="wordmark footer-brand" href="#">ZAMIN <span>PhishHunter</span></a><div class="footer-credit">Developed by <strong>ZAMIN JAGIRANI</strong><br><a href="mailto:zaminjagirani63@gmail.com">zaminjagirani63@gmail.com</a></div><div class="footer-copy">© 2026 ZAMIN PhishHunter<br>Use only for lawful security checks.</div></footer>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark"><i data-lucide="shield-check"></i></span><span>ZAMIN <b>PhishHunter</b><small>LINK INTELLIGENCE</small></span></a><div class="footer-dev">Developed with care by <strong>ZAMIN JAGIRANI</strong><a href="mailto:zaminjagirani63@gmail.com">zaminjagirani63@gmail.com</a></div><div class="footer-note">© 2026 ZAMIN PhishHunter<br>For lawful security awareness use.</div></footer>
   <script src="/app.js"></script>
+  <script>if(window.lucide) lucide.createIcons();</script>
 </body>
 </html>
