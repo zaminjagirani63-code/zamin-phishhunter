@@ -35,11 +35,9 @@ form.addEventListener("submit", async (event) => {
     showResult("warn", "Please enter a valid URL", error.message || "Include https:// or http:// in the address.");
     return;
   }
-
   button.disabled = true;
   button.textContent = "Checking…";
   showResult("", "Checking URL", "Contacting the threat-intelligence service. This may take a few seconds.");
-
   try {
     const response = await fetch("/api/scan", {
       method: "POST",
@@ -48,7 +46,6 @@ form.addEventListener("submit", async (event) => {
     });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error || "The scan service could not complete the request.");
-
     if (data.status === "pending") {
       showResult("warn", "Analysis submitted — result pending", "The URL was not found in the current report cache, so a scan was submitted. Wait briefly and scan again to retrieve the report.");
     } else {
@@ -76,6 +73,7 @@ form.addEventListener("submit", async (event) => {
     showResult("warn", "Scan unavailable", error.message + " Check that the VirusTotal API key is configured in Vercel and try again.");
   } finally {
     button.disabled = false;
-    button.innerHTML = 'Analyze URL <span>→</span>';
+    button.innerHTML = 'Analyze URL <i data-lucide="arrow-right"></i>';
+    if (window.lucide) lucide.createIcons();
   }
 });
